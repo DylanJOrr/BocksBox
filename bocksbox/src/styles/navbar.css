@@ -1,8 +1,0 @@
-.navButton {
-	border: var(--bs-border-width) solid rgba(0, 0, 0, 0);
-	transition: ease 0.2s;
-}
-
-.navButton:hover {
-	border: var(--bs-border-width) solid var(--bs-border-color);
-}
