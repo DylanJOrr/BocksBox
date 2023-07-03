@@ -1,0 +1,38 @@
+{
+	"items": [
+		{
+			"id": 0,
+			"subid": 0,
+			"name": "Item 1",
+			"desc": "LShort description of item 1.",
+			"img": "",
+			"rating": 3.8,
+			"sections": [
+				{ "id": 0, "text": "Subsection 1" },
+				{ "id": 1, "text": "Subsection 2" },
+				{ "id": 2, "text": "Subsection 3" }
+			],
+			"links": [
+				{ "id": 0, "link": "#", "text": "Link 1" },
+				{ "id": 1, "link": "#", "text": "Link 2" }
+			]
+		},
+		{
+			"id": 1,
+			"subid": 0,
+			"name": "Item 2",
+			"desc": "Short description of item 2.",
+			"img": "",
+			"rating": 4.3,
+			"sections": [
+				{ "id": 0, "text": "Subsection 1" },
+				{ "id": 1, "text": "Subsection 2" },
+				{ "id": 2, "text": "Subsection 3" }
+			],
+			"links": [
+				{ "id": 0, "link": "#", "text": "Link 1" },
+				{ "id": 1, "link": "#", "text": "Link 2" }
+			]
+		}
+	]
+}
