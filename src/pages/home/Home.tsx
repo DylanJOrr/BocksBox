@@ -2,19 +2,17 @@ import { Button, Container, Image, Row, Col } from 'react-bootstrap';
 
 const HomePage = () => {
 	return (
-    <>
-        <Container>
-            <Container>
-                <Row>
+		<div className="HomePage d-flex flex-column justify-content-between">
+               <section className="build">
+                <div className="d-flex flex-row justify-content-evenly m-5">
                     <Image src="src/img/sushi.png" fluid />
-                    <Col>
+                    <div className="d-flex flex-column justify-content-center align-items-center m-5">
                         <h2>Catch Your Craving</h2>
                         <Button variant="primary">Get Started</Button>
-                    </Col>
-                </Row>
-            </Container>
-        </Container>
-		<div className="HomePage d-flex flex-column justify-content-between">
+                    </div>
+                </div>
+                <i>1</i>
+			</section>
 			<section className="discover">
                 <div className="d-flex flex-row justify-content-center">
                     <div className="d-flex flex-column justify-content-center align-items-center">
@@ -46,7 +44,6 @@ const HomePage = () => {
                 <i>1</i>
 			</section>
 		</div>
-        </>
 	);
 };
 
