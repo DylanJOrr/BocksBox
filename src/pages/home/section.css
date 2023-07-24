@@ -1,0 +1,50 @@
+.divider, .divider-top, .divider-bottom {
+    display: flex;
+    position: absolute;
+    width: 8vw;
+    height: 8vw;
+    border-radius: 50%;
+/*     top: 50%; */
+    left: 50%;
+    /* transform: translateX(-3rem); */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: bold;
+    background-color: var(--bs-primary);
+    color: var(--bs-light);
+}
+
+.divider-top {
+    /* bottom: 4rem; */
+}
+
+.divider-bottom {
+    /* position: relative; */
+    /* top: 8rem; */
+}
+
+.divider::before, .divider::after, .divider-top::after, .divider-bottom::before {
+    content: '';
+    position: absolute;
+    bottom: calc(100% - 2px);
+    height: 150%;
+    width: 2px;
+    border-radius: 2px;
+    border: 2px solid var(--bs-primary);
+}
+
+.divider::after, .divider-top::after {
+    top: calc(100% - 2px)
+} 
+
+.section-img {
+    max-width: 40%;
+}
+
+h2.header {
+    font-size: 5vw;
+}

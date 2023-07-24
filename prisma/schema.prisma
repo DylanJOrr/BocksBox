@@ -1,0 +1,98 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model User {
+  id          String  @id @default(uuid())
+  displayName String?
+  username    String  @unique
+  email       String  @unique
+  orders      Order[]
+  // favourites  Product[]
+  preferences Json
+
+  @@index([email, username])
+}
+
+model Order {
+  id          String   @id @default(uuid())
+  // products    Product[]
+  orderTime   DateTime @default(now())
+  updatedLast DateTime @updatedAt
+  cancelled   Boolean  @default(false)
+  user        User?    @relation(fields: [userId], references: [id])
+  userId      String?
+}
+
+model Product {
+  id       Int    @id @default(autoincrement())
+  name     String
+  desc_sm  String
+  desc_lg  String
+  rating   Float
+  // nutrition   Nutrition?
+  // ingredients Ingredient[]
+  cookTime String
+  facts    String
+  tags     String
+  // order    Order[]
+  // User      User?      @relation(fields: [userId], references: [id])
+  // userId    String?
+}
+
+model Ingredient {
+  id          Int       @id @default(autoincrement())
+  name        String
+  desc        String
+  amount      Float
+  nutrition   Nutrition @relation(fields: [nutritionId], references: [id])
+  // products    Product[]
+  nutritionId String
+}
+
+model Nutrition {
+  id                  String       @id @default(uuid())
+  // productId           Int          @unique
+  calories            Int
+  protein             Float
+  total_fat           Float
+  fibre               Float
+  saturated_fat       Float
+  cholesterol         Float
+  calcium             Float
+  iron                Float
+  sodium              Float
+  potassium           Float
+  magnesium           Float
+  phosphorus          Float
+  vitamin_a           Float
+  vitamin_c           Float
+  vitamin_b12         Float
+  folate              Float
+  sugar               Float
+  thiamin             Float
+  niacin              Float
+  lycopene            Float
+  beta_carotene       Float
+  vitamin_d           Float
+  caffeine            Float
+  dha                 Float
+  epa                 Float
+  trans_fat           Float
+  monounsaturated_fat Float
+  polyunsaturated_fat Float
+  vitamin_e           Float
+  alcohol             Float
+  riboflavi           Float
+  // Product             Product      @relation(fields: [productId], references: [id])
+  Ingredient          Ingredient[]
+}

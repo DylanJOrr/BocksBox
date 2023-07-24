@@ -14,3 +14,10 @@ export type Cart = {
 	addToCart: (newItem: Item) => void;
 	removeFromCart: (id: number) => void;
 };
+
+export interface Language {
+    code: string;
+    flagCode: string;
+    nativeName: string;
+    englishName?: string;
+}
