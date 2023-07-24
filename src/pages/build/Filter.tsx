@@ -14,6 +14,7 @@ const handleCartClick = (inv: Item[]) => {
 const Filter = () => {
 	const [searchInput, setSearchInput] = useState<string>("");
 	const [sortOrder, setSortOrder] = useState<string>("POP");
+    const [tags, setTags] = useState<string>("");
 	const cart = useContext(ShoppingCartContext);
 	return (
 		<div className="discoverFilter vh-100 d-flex flex-row bg-body-tertiary">
@@ -76,7 +77,7 @@ const Filter = () => {
 						<Badge bg="secondary">{useContext(ShoppingCartContext).inventory.length}</Badge>
 					</Button>
 				</span>
-				<CardGrid filterText={searchInput} sortOrder={sortOrder} />
+				<CardGrid filterText={searchInput} sortOrder={sortOrder} tags={tags} />
 			</div>
 		</div>
 	);

@@ -1,12 +1,13 @@
 export type Item = {
 	id: number;
-	subid: number;
 	name: string;
-	desc: string;
+	desc_sm: string;
+	desc_lg: string;
 	img: string;
 	rating: number;
-	sections: { id: number; text: string }[];
-	links: { id: number; link: string; text: string }[];
+    cookTime: string;
+    facts: string;
+    tags: string;
 };
 
 export type Cart = {

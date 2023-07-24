@@ -41,14 +41,14 @@ const ProductCardL = ({ items }: ICustomPropsProductCardL) => {
 	return (
 		<div className="productCardL d-flex flex-row m-3">
 			{items.map((item) => (
-				<Card key={item.id} className="m-3 shadow pe-auto" style={{ width: "18rem" }} onClick={() => handleClickCard(item.subid, item.name, navigate)}>
+				<Card key={item.id} className="m-3 shadow pe-auto" style={{ width: "18rem" }} onClick={() => handleClickCard(item.id, item.name, navigate)}>
 					<Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
 					<Card.Body className="position-relative">
 						<CardGroup className="d-flex flex-row justify-content-between">
 							<Card.Title>{item.name}</Card.Title>
 							<Card.Text className="fw-lighter text-end">{"Rating: " + item.rating + "/5"}</Card.Text>
 						</CardGroup>
-						<Card.Text className="">{item.desc}</Card.Text>
+						<Card.Text className="">{item.desc_sm}</Card.Text>
 						<CardGroup className="position-absolute z-1" style={{ bottom: "-20px", right: "-15px" }}>
 							<Button
 								className="d-flex justify-content-center align-items-center rounded-circle p-0 ms-auto"
@@ -61,18 +61,18 @@ const ProductCardL = ({ items }: ICustomPropsProductCardL) => {
 						</CardGroup>
 					</Card.Body>
 					<ListGroup className="list-group-flush z-0">
-						{item.sections.map((section) => (
+						{/* item.tags.split(;).map((section) => (
 							<ListGroup.Item key={section.id}>{section.text}</ListGroup.Item>
-						))}
+						)) */}
 					</ListGroup>
 					<Card.Body>
-						{item.links.map((link) => (
+						{/* item.tags.split("").map((link) => (
 							<Card.Link key={link.id} href={link.link}>
 								{link.text}
 							</Card.Link>
-						))}
+						)) */}
 					</Card.Body>
-					<Link className="m-3 d-none d-lg-block" to={"/Details/" + item.subid + "/" + item.name}>
+					<Link className="m-3 d-none d-lg-block" to={"/Details/" + item.id + "/" + item.name}>
 						<Button className="rounded-pill w-100" variant="primary" onClick={() => console.log(item.name)}>
 							Details
 						</Button>

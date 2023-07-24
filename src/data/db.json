@@ -1,38 +1,32 @@
-{
-	"items": [
-		{
-			"id": 0,
-			"subid": 0,
-			"name": "Item 1",
-			"desc": "LShort description of item 1.",
-			"img": "",
-			"rating": 3.8,
-			"sections": [
-				{ "id": 0, "text": "Subsection 1" },
-				{ "id": 1, "text": "Subsection 2" },
-				{ "id": 2, "text": "Subsection 3" }
-			],
-			"links": [
-				{ "id": 0, "link": "#", "text": "Link 1" },
-				{ "id": 1, "link": "#", "text": "Link 2" }
-			]
-		},
-		{
-			"id": 1,
-			"subid": 0,
-			"name": "Item 2",
-			"desc": "Short description of item 2.",
-			"img": "",
-			"rating": 4.3,
-			"sections": [
-				{ "id": 0, "text": "Subsection 1" },
-				{ "id": 1, "text": "Subsection 2" },
-				{ "id": 2, "text": "Subsection 3" }
-			],
-			"links": [
-				{ "id": 0, "link": "#", "text": "Link 1" },
-				{ "id": 1, "link": "#", "text": "Link 2" }
-			]
-		}
-	]
-}
+{[
+        {
+            "name": "Turkish-Style Spiced Chicken",
+            "desc_sm": "with Almond Rice and Yogurt Sauce",
+            "desc_lg": "Ethically Sourced 2% Skim Milk from Canadian Dairy farmers.",
+            "img": "https://img.hellofresh.com/w_828,q_auto,f_auto,c_l…/image/poulet-assaisonne-a-la-turque-42bb2099.jpg",
+            "rating": 4.5,
+            "cookTime": "30 min",
+            "facts": "Quick Prep;",
+            "tags": "turkey;turkish;meat;chicken;rice"
+        },
+        {
+            "name": "Zesty Tomato Penne Al Forno",
+            "desc_sm": "with Bocconcini and Olives",
+            "desc_lg": "Ethically Sourced 2% Skim Milk from Canadian Dairy farmers.",
+            "img": "https://img.hellofresh.com/w_828,q_auto,f_auto,c_l…pennes-aux-tomates-gratinees-au-four-778294ec.jpg",
+            "rating": 4.2,
+            "cookTime": "25 min",
+            "facts": "Spicy;Veggie;Low CO2",
+            "tags": "italy;italian;noodle;pasta;vegetarian"
+        },
+        {
+            "name": "Charred Corn and Jalapeño Pork Tacos",
+            "desc_sm": "with Lime Crema and Cheddar",
+            "desc_lg": "Ethically Sourced 2% Skim Milk from Canadian Dairy farmers.",
+            "img": "https://img.hellofresh.com/w_828,q_auto,f_auto,c_l…orc-au-mais-et-aux-jalapenos-grilles-71fa070c.jpg",
+            "rating": 3.8,
+            "cookTime": "45 min",
+            "facts": "Spicy;Quick",
+            "tags": "mexicon;mexican;taco;pork;meat;corn"
+        },
+]}
