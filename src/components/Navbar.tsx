@@ -6,22 +6,24 @@ import { Language } from "../share/types/types";
 import Searchbar from "./form/SearchBar";
 import { useState } from "react";
 import i18n from "../i18n";
+import { useTranslation } from "react-i18next";
 
 function NavScrollExample() {
 	const [searchInput, setSearchInput] = useState("");
 
-    const langs: Language[] = [
-        { code: 'en', flagCode: 'GB', nativeName: 'English' },
-        { code: 'fr', flagCode: 'FR', nativeName: 'Francais' },
-    ];
+     const langs: Language[] = [
+          { code: 'en', flagCode: 'GB', nativeName: 'English' },
+          { code: 'fr', flagCode: 'FR', nativeName: 'Francais' },
+     ];
 
-    const [currLang, setCurrLang] = useState(i18n.language.toUpperCase());
+     const [currLang, setCurrLang] = useState(i18n.language.toUpperCase());
 
-    function changeLang(lang: string) {
-        i18n.changeLanguage(lang);
-        setCurrLang(i18n.language.toUpperCase());
-        return;
-    }
+     function changeLang(lang: string) {
+          i18n.changeLanguage(lang);
+          setCurrLang(i18n.language.toUpperCase());
+          return;
+     }
+     const { t } = useTranslation();
 
 	return (
 		<Navbar expand="lg" className="py-3 shadow-sm" >
@@ -33,32 +35,32 @@ function NavScrollExample() {
 
 				<Navbar.Collapse className="">
 					<Nav className="my-3">
-                        <Nav.Link href="/Build" className="rounded-pill navButton text-nowrap text-center">Build A Box</Nav.Link>
-                        <Container className="">
-                            <NavDropdown title="Discover" className="rounded-pill mx-2 navButton text-center">
-                                <NavDropdown.Item href="/Build/#action1">Meal Kits</NavDropdown.Item>
-                                <NavDropdown.Item href="/Build/#action2">Ready Meals</NavDropdown.Item>
-                                <NavDropdown.Item href="/Build/#action3">Favourites</NavDropdown.Item>
-                            </NavDropdown>
-                        </Container>
-                        <Container>
-                            <Nav.Link href="/About" className="rounded-pill navButton text-center">
-                                About
-                            </Nav.Link>
-                        </Container>
-                        <Form className="d-flex justify-content-center align-items-center d-lg-none">
-                            <Nav.Link href="/register">
-                                <Button variant="outline-secondary me-2 rounded-pill">Register</Button>
-                            </Nav.Link>
-                            <Nav.Link href="/login">
-                                <Button variant="outline-primary rounded-pill">Login</Button>
-                            </Nav.Link>
-                        </Form>
-                        <div className="d-block d-sm-none mt-2">
-                            <Searchbar context="Search" filter={setSearchInput} />
-                        </div>
-					</Nav>
-				</Navbar.Collapse>
+                         <Nav.Link href="/Build" className="rounded-pill navButton text-nowrap text-center">{t('nav_build')}</Nav.Link>
+                         <Container className="">
+                              <NavDropdown title="Discover" className="rounded-pill mx-2 navButton text-center text-nowrap">
+                                   <NavDropdown.Item href="/Build/#action1">{t('nav_sec_mealkits')}</NavDropdown.Item>
+                                   <NavDropdown.Item href="/Build/#action2">{t('nav_sec_readymeals')}</NavDropdown.Item>
+                                   <NavDropdown.Item href="/Build/#action3">{t('nav_sec_favourites')}</NavDropdown.Item>
+                              </NavDropdown>
+                         </Container>
+                         <Container>
+                              <Nav.Link href="/About" className="rounded-pill navButton text-center text-nowrap">
+                                   {t('nav_about')}
+                              </Nav.Link>
+                         </Container>
+                         <Form className="d-flex justify-content-center align-items-center d-lg-none">
+                              <Nav.Link href="/register">
+                                   <Button variant="outline-secondary me-2 rounded-pill">{t('nav_register')}</Button>
+                              </Nav.Link>
+                              <Nav.Link href="/login">
+                                   <Button variant="outline-primary rounded-pill">{t('nav_login')}</Button>
+                              </Nav.Link>
+                         </Form>
+                         <div className="d-block d-sm-none mt-2">
+                              <Searchbar context="Search" filter={setSearchInput} />
+                         </div>
+                         </Nav>
+                    </Navbar.Collapse>
 
                 <div className="d-none d-sm-block flex-grow-1">
                     <Searchbar context="Search" filter={setSearchInput} />
@@ -77,10 +79,10 @@ function NavScrollExample() {
 
                 <Form className="d-none d-lg-flex flex-nowrap">
                     <Nav.Link href="/register">
-                        <Button variant="outline-secondary me-2 rounded-pill text-nowrap">Sign Up</Button>
+                        <Button variant="outline-secondary me-2 rounded-pill text-nowrap">{t('nav_register')}</Button>
                     </Nav.Link>
                     <Nav.Link href="/login">
-                        <Button variant="outline-primary rounded-pill">Login</Button>
+                        <Button variant="outline-primary rounded-pill">{t('nav_login')}</Button>
                     </Nav.Link>
                 </Form>
 			</Container>

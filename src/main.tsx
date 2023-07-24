@@ -12,11 +12,11 @@ const client = new ApolloClient({
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
-        // <ApolloProvider client={client}>
-            <React.Suspense fallback="loading">
-                <App />
-            </React.Suspense>
-        // </ApolloProvider>
+          <ApolloProvider client={client}>
+               <React.Suspense fallback="loading">
+                    <App />
+               </React.Suspense>
+          </ApolloProvider>
     </React.StrictMode>,
 )
 
