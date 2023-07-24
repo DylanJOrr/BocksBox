@@ -29,7 +29,7 @@ function NavScrollExample() {
 		<Navbar expand="lg" className="py-3 shadow-sm" >
 			<Container fluid className="mx-3">
 				<Navbar.Brand href="/" className="text-uppercase fw-medium text-align-center flex-grow-0">
-                    <img src="src/img/foodbox.png" alt="BocksBox Logo" width="50"/>
+                    <img src="img/foodbox.png" alt="BocksBox Logo" width="50"/>
 					BocksBox
 				</Navbar.Brand>
 
